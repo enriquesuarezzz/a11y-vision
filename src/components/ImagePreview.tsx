@@ -8,7 +8,7 @@ interface ImagePreviewProps {
   imageUrl: string | null;
   filter: string | null;
 }
-
+// The ImagePreview component displays an image with a filter applied
 const ImagePreview: React.FC<ImagePreviewProps> = ({ imageUrl, filter }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [loading, setLoading] = useState(false);
@@ -38,11 +38,14 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({ imageUrl, filter }) => {
           newHeight = maxHeight;
         }
 
+        // Set canvas dimensions
         setDimensions({ width: newWidth, height: newHeight });
 
+        // Get the canvas element
         const canvas = canvasRef.current;
         if (!canvas) return;
 
+        // Get the 2D context of the canvas
         canvas.width = newWidth;
         canvas.height = newHeight;
 
@@ -58,13 +61,14 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({ imageUrl, filter }) => {
 
   if (!imageUrl) {
     return (
+      // Placeholder card when no image is uploaded
       <Card className="border-2 border-dashed border-slate-200 w-full aspect-video flex items-center justify-center bg-slate-50">
         <div className="text-center p-6">
           <div className="bg-slate-100 rounded-full p-3 w-16 h-16 mx-auto flex items-center justify-center mb-4">
             <ImageIcon className="h-8 w-8 text-slate-400" />
           </div>
           <p className="text-slate-500">
-            Suba una imagen para visualizar el resultado
+            Upload an image to visualise the result
           </p>
         </div>
       </Card>
@@ -74,6 +78,7 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({ imageUrl, filter }) => {
   return (
     <Card className="w-full overflow-hidden border border-slate-200">
       <CardContent className="p-0 relative">
+        {/* Loading spinner */}
         {loading && (
           <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 z-10">
             <div className="flex flex-col items-center">
@@ -82,9 +87,11 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({ imageUrl, filter }) => {
             </div>
           </div>
         )}
+        {/* Placeholder card when image is loading */}
         {!dimensions.width && !loading && (
           <Skeleton className="w-full h-[400px]" />
         )}
+        {/* Canvas to display the filtered image */}
         <canvas
           ref={canvasRef}
           className="w-full object-contain"
@@ -94,6 +101,7 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({ imageUrl, filter }) => {
             display: loading ? "none" : "block",
           }}
         ></canvas>
+        {/* Filter badge */}
         {filter && !loading && (
           <div className="absolute top-0 right-0 bg-black/70 text-white text-xs font-medium py-1 px-3 rounded-bl-md">
             {filter.charAt(0).toUpperCase() + filter.slice(1)}

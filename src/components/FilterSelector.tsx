@@ -15,35 +15,38 @@ interface FilterSelectorProps {
   selectedFilter: string | null;
 }
 
+// Define the filters with their IDs, names, and descriptions
+
 const filters = [
   {
     id: "protanopia",
-    name: "Protanopía",
-    description: "Dificultad para percibir el color rojo",
+    name: "Protanopia",
+    description: "Difficulty in perceiving the colour red",
   },
   {
     id: "deuteranopia",
-    name: "Deuteranopía",
-    description: "Dificultad para percibir el color verde",
+    name: "Deuteranopia",
+    description: "Difficulty in perceiving the colour green",
   },
   {
     id: "tritanopia",
-    name: "Tritanopía",
-    description: "Dificultad para percibir el color azul",
+    name: "Tritanopia",
+    description: "Difficulty in perceiving blue colour",
   },
   {
     id: "achromatopsia",
-    name: "Acromatopsia",
-    description: "Visión en blanco y negro",
+    name: "Achromatopsia",
+    description: "Black and white vision",
   },
   {
     id: "blur",
-    name: "Visión borrosa",
-    description: "Simulación de baja agudeza visual",
+    name: "Blurred vision",
+    description: "Simulation of low visual acuity",
   },
-  { id: "normal", name: "Visión normal", description: "Sin alteraciones" },
+  { id: "normal", name: "Normal Vision", description: "No alterations" },
 ];
 
+// The FilterSelector component allows users to select a filter for visual impairment simulation
 const FilterSelector: React.FC<FilterSelectorProps> = ({
   onFilterChange,
   selectedFilter,
@@ -54,12 +57,14 @@ const FilterSelector: React.FC<FilterSelectorProps> = ({
         onValueChange={onFilterChange}
         value={selectedFilter || undefined}
       >
+        {/*  The Select component provides a dropdown for selecting a filter */}
         <SelectTrigger className="w-full h-12">
           <div className="flex items-center gap-2">
             <Eye className="h-4 w-4" />
-            <SelectValue placeholder="Elegir tipo de discapacidad visual" />
+            <SelectValue placeholder="Choose type of visual impairment" />
           </div>
         </SelectTrigger>
+        {/*  The SelectContent component contains the list of filters */}
         <SelectContent>
           {filters.map((filter) => (
             <SelectItem key={filter.id} value={filter.id}>
@@ -73,13 +78,14 @@ const FilterSelector: React.FC<FilterSelectorProps> = ({
           ))}
         </SelectContent>
       </Select>
-
+      {/*  The Card component displays quick filters */}
       <Card className="border border-slate-200">
         <CardContent className="p-4">
           <div className="text-sm text-slate-600 mb-3 font-medium">
-            Filtros rápidos
+            Quick filters
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            {/*  The Badge component represents quick filters */}
             {filters.map(
               (filter) =>
                 filter.id !== "normal" && (
