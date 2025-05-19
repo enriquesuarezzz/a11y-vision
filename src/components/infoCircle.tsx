@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -19,12 +18,14 @@ import { CircleCheck } from "lucide-react";
 export const InfoCircle = () => {
   return (
     <Dialog>
+      {/* Dialog component */}
       <DialogTrigger asChild>
         <Button
           variant="ghost"
           className="rounded-full h-8 w-8 p-0 text-blue-100 hover:text-white hover:bg-blue-800/30"
         >
-          <span className="sr-only">Información</span>
+          {/* Hidden text */}
+          <span className="sr-only">Information</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -42,65 +43,67 @@ export const InfoCircle = () => {
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
+        {/* Dialog header */}
         <DialogHeader>
-          <DialogTitle>Sobre el Simulador de Discapacidad Visual</DialogTitle>
+          <DialogTitle>About the Visual Impairment Simulator</DialogTitle>
           <DialogDescription>
-            Esta herramienta permite simular diferentes tipos de discapacidades
-            visuales para entender mejor la experiencia de usuarios con estas
-            condiciones.
+            This tool allows to simulate different types of visual impairments
+            to better understand the experience of users with these conditions.
           </DialogDescription>
         </DialogHeader>
-
+        {/* Accordion component */}
         <div className="space-y-6">
           <Accordion type="single" collapsible className="w-full">
+            {/* Accordion items */}
             <AccordionItem value="protanopia">
-              <AccordionTrigger>Protanopía</AccordionTrigger>
+              <AccordionTrigger>Protanopia</AccordionTrigger>
               <AccordionContent>
-                Es un tipo de daltonismo donde hay dificultad para distinguir
-                entre el rojo y el verde. Las personas con esta condición no
-                pueden percibir el color rojo correctamente.
+                It is a type of colour blindness where there is difficulty in
+                distinguishing between red and green. People with this condition
+                cannot perceive the colour red correctly.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="deuteranopia">
-              <AccordionTrigger>Deuteranopía</AccordionTrigger>
+              <AccordionTrigger>Deuteranopia</AccordionTrigger>
               <AccordionContent>
-                Es un tipo de daltonismo que afecta la percepción del color
-                verde. Las personas con esta condición confunden el verde con el
-                rojo, similar a la protanopía.
+                It is a type of colour blindness that affects the perception of
+                the colour green. People with this condition mistake green for
+                red , similar to protanopia.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="tritanopia">
-              <AccordionTrigger>Tritanopía</AccordionTrigger>
+              <AccordionTrigger>Tritanopia</AccordionTrigger>
               <AccordionContent>
-                Es un tipo de daltonismo poco común que afecta la percepción del
-                azul y el amarillo, dificultando distinguir entre estos colores.
+                It is a rare type of colour blindness that affects the
+                perception of blue and yellow, making it difficult to
+                distinguish between these colours.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="achromatopsia">
-              <AccordionTrigger>Acromatopsia</AccordionTrigger>
+              <AccordionTrigger>Achromatopsia</AccordionTrigger>
               <AccordionContent>
-                Es una condición que causa ceguera total al color (visión en
-                blanco y negro) y una mayor sensibilidad a la luz.
+                It is a condition that causes total colour blindness (vision in
+                black and white) and increased sensitivity to light.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="blur">
-              <AccordionTrigger>Visión Borrosa</AccordionTrigger>
+              <AccordionTrigger>Blurred Vision</AccordionTrigger>
               <AccordionContent>
-                Simula condiciones como cataratas, degeneración macular o miopía
-                severa, donde la visión pierde nitidez.
+                Simulates conditions such as cataracts, macular degeneration or
+                severe myopia , where vision becomes blurred.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-
+          {/* Recommended use */}
           <div className="rounded-lg bg-blue-50 p-4 text-blue-800 text-sm">
             <div className="flex gap-2">
               <CircleCheck className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-medium mb-1">Uso recomendado</h4>
+                <h4 className="font-medium mb-1">Recommended use</h4>
                 <p>
-                  Esta herramienta es útil para diseñadores y desarrolladores
-                  que desean crear interfaces accesibles para personas con
-                  discapacidad visual.
+                  This tool is useful for designers and developers who want to
+                  create accessible interfaces for people with visual
+                  impairment.
                 </p>
               </div>
             </div>
