@@ -28,7 +28,6 @@ https://a11y-vision.vercel.app/
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
-- Optional: [Color-blind filters or custom canvas manipulation]
 
 ## 🛠️ Installation
 
