@@ -33,8 +33,8 @@ https://a11y-vision.vercel.app/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/visual-impairment-simulator.git
-   cd visual-impairment-simulator
+   git clone https://github.com/enriquesuarezzz/a11y-vision.git
+   cd a11y-vision
     ```
    
 2. **Install dependencies:**
