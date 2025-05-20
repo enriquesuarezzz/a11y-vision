@@ -21,7 +21,6 @@ A React + Vite + TailwindCSS tool that simulates various types of visual impairm
 - **Tritanopia** (Blue-blind)
 - **Achromatopsia** (Complete color blindness)
 - **Blurred Vision**
-- **Tunnel Vision**
 - More to come...
 
 ## 📦 Tech Stack
