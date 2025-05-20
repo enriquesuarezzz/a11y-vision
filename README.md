@@ -4,7 +4,7 @@ A React + Vite + TailwindCSS tool that simulates various types of visual impairm
 
 ## 🌐 Live Demo
 
-(https://a11y-vision.vercel.app/)
+https://a11y-vision.vercel.app/
 
 ## 🚀 Features
 
